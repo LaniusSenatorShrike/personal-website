@@ -1,6 +1,14 @@
 export const cvContent = {
   title: "Experience",
   pdfUrl: "",
+  skills: {
+    title: "Technical Skills",
+    items: [
+      "Python", "SQL", "Kafka", "Spark", "Airflow", "dbt", "Terraform",
+      "AWS", "GCP", "Docker", "Kubernetes", "PostgreSQL", "Redis",
+      "TypeScript", "React", "Next.js"
+    ]
+  },
   experience: [
     {
       id: 1,
