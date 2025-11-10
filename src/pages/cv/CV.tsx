@@ -1,6 +1,6 @@
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
-import { Download, Award, Briefcase } from 'lucide-react';
+import { Download, Award, Briefcase, Code2 } from 'lucide-react';
 import { cvContent as content } from './content';
 
 export function CV() {
@@ -16,6 +16,25 @@ export function CV() {
             <Download className="h-4 w-4" />
             Download PDF
           </Button>
+        </div>
+
+        {/* Technical Skills */}
+        <div className="mb-20">
+          <div className="flex items-center gap-3 mb-12">
+            <Code2 className="h-6 w-6 text-[var(--color-accent)]" />
+            <h3>{content.skills.title}</h3>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {content.skills.items.map((skill) => (
+              <Badge
+                key={skill}
+                variant="outline"
+                className="px-4 py-2 border-gray-600 text-gray-400 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                {skill}
+              </Badge>
+            ))}
+          </div>
         </div>
 
         {/* Experience */}

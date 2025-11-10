@@ -1,4 +1,3 @@
-import { Badge } from '../../components/ui/badge';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { aboutContent as content } from './about-content';
 import { homeContent } from './content';
@@ -40,22 +39,6 @@ export function Home({ onNavigate }: HomeProps) {
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-[var(--color-accent)]"></div>
             </div>
-          </div>
-        </div>
-
-        {/* Skills */}
-        <div>
-          <h3 className="mb-8">{content.skills.title}</h3>
-          <div className="flex flex-wrap gap-3">
-            {content.skills.items.map((skill) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="px-4 py-2 border-gray-600 text-gray-400 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
-              >
-                {skill}
-              </Badge>
-            ))}
           </div>
         </div>
       </div>
