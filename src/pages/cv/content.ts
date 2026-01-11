@@ -13,7 +13,7 @@ export const cvContent = {
     {
       id: 1,
       company: "Marktplaats",
-      role: "Tech Lead - Data Platform",
+      role: "Tech Lead, Data & Analytics Engineering - Marketing",
       period: "2023 - Present",
       location: "Amsterdam, Netherlands",
       highlights: [
