@@ -30,6 +30,18 @@ export const contactContent = {
       label: "X (Twitter)",
       value: "",
       link: "https://x.com/masoudghanbari_"
+    },
+    {
+      icon: "BookOpen",
+      label: "Medium",
+      value: "",
+      link: "https://medium.com/@ghanbari.masoud7"
+    },
+    {
+      icon: "Play",
+      label: "YouTube",
+      value: "",
+      link: "https://www.youtube.com/@Lineage_official"
     }
   ],
   calendly: {
