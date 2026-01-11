@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
-import { Mail, Linkedin, Github, Calendar, Send, GraduationCap, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Github, Calendar, Send, GraduationCap, Twitter, BookOpen, Youtube } from 'lucide-react';
 import { Label } from '../../components/ui/label';
 import { contactContent as content } from './content';
 
@@ -12,6 +12,8 @@ const iconMap = {
   Github,
   GraduationCap,
   Twitter,
+  BookOpen,
+  Youtube,
 };
 
 export function Contact() {

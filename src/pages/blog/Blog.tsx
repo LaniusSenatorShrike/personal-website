@@ -87,6 +87,7 @@ export function Blog() {
           <div className="space-y-4">
             {content.posts
               .filter((post) => !post.featured)
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
               .map((post) => (
                 <a
                   key={post.id}

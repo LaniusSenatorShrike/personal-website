@@ -38,7 +38,7 @@ export const contactContent = {
       link: "https://medium.com/@ghanbari.masoud7"
     },
     {
-      icon: "Play",
+      icon: "Youtube",
       label: "YouTube",
       value: "",
       link: "https://www.youtube.com/@Lineage_official"
