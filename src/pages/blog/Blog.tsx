@@ -1,5 +1,5 @@
 import { Badge } from '../../components/ui/badge';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, ExternalLink } from 'lucide-react';
 import { blogContent as content } from './content';
 
 export function Blog() {
@@ -7,7 +7,20 @@ export function Blog() {
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="mb-4">{content.title}</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2>{content.title}</h2>
+            {content.mediumProfile && (
+              <a
+                href={content.mediumProfile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-accent)] flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                View on Medium
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            )}
+          </div>
           <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
         </div>
 
@@ -31,10 +44,16 @@ export function Blog() {
             {content.posts
               .filter((post) => post.featured)
               .map((post) => (
-                <article
+                <a
                   key={post.id}
-                  className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors cursor-pointer"
+                  href={post.url || "#"}
+                  target={post.url ? "_blank" : undefined}
+                  rel={post.url ? "noopener noreferrer" : undefined}
+                  className="block"
                 >
+                  <article
+                    className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors cursor-pointer h-full"
+                  >
                   <Badge variant="secondary" className="mb-4 text-gray-400">
                     {post.category}
                   </Badge>
@@ -56,7 +75,8 @@ export function Blog() {
                     Read More
                     <ArrowRight className="h-4 w-4" />
                   </div>
-                </article>
+                  </article>
+                </a>
               ))}
           </div>
         </div>
@@ -68,10 +88,16 @@ export function Blog() {
             {content.posts
               .filter((post) => !post.featured)
               .map((post) => (
-                <article
+                <a
                   key={post.id}
-                  className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors cursor-pointer"
+                  href={post.url || "#"}
+                  target={post.url ? "_blank" : undefined}
+                  rel={post.url ? "noopener noreferrer" : undefined}
+                  className="block"
                 >
+                  <article
+                    className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors cursor-pointer"
+                  >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
@@ -96,6 +122,7 @@ export function Blog() {
                     </div>
                   </div>
                 </article>
+                </a>
               ))}
           </div>
         </div>

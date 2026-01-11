@@ -1,0 +1,27 @@
+{
+  "public": "build",
+  "rewrites": [
+    { "source": "/assets/**", "destination": "/assets/$1" },
+    { "source": "**", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "**/*.jpg",
+      "headers": [
+        { "key": "Content-Type", "value": "image/jpeg" }
+      ]
+    },
+    {
+      "source": "**/*.png",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" }
+      ]
+    },
+    {
+      "source": "**/*.svg",
+      "headers": [
+        { "key": "Content-Type", "value": "image/svg+xml" }
+      ]
+    }
+  ]
+}

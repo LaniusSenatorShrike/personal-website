@@ -1,6 +1,6 @@
 export const youtubeContent = {
   title: "YouTube",
-  channelUrl: "https://youtube.com",
+  channelUrl: "https://www.youtube.com/@Lineage_official",
   videos: [
     {
       id: 1,

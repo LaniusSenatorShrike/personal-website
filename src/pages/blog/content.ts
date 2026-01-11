@@ -1,36 +1,37 @@
 export const blogContent = {
   title: "Writing",
+  mediumProfile: "https://medium.com/@ghanbari.masoud7",
   categories: ["All", "Data Engineering", "Cloud", "AI", "Leadership"],
   posts: [
     {
       id: 1,
-      title: "Scaling ETL Pipelines with Apache Airflow",
+      title: "Databricks Lakehouse Explained",
       category: "Data Engineering",
-      excerpt: "Learn how to build production-ready ETL pipelines that process 500GB+ daily using Airflow best practices.",
-      date: "2024-10-15",
+      excerpt: "Understanding the unified data platform that combines data lakes and data warehouses.",
+      date: "2024-12-15",
       readTime: "8 min",
       featured: true,
-      url: ""
+      url: "https://medium.com/@ghanbari.masoud7/databricks-lakebase-explained-cd878ac65fdd"
     },
     {
       id: 2,
-      title: "Real-time Data Processing with Kafka Streams",
-      category: "Data Engineering",
-      excerpt: "Deep dive into building high-throughput streaming applications that handle 10M+ events per hour.",
-      date: "2024-09-22",
+      title: "Stop Fighting Your Multi-Cloud Reality: The Uncomfortable Truth About Multi-Cloud Data Platforms",
+      category: "Cloud",
+      excerpt: "Why multi-cloud is inevitable and how to build resilient data platforms across cloud providers.",
+      date: "2024-11-22",
       readTime: "12 min",
       featured: true,
-      url: ""
+      url: "https://medium.com/@ghanbari.masoud7/stop-fighting-your-multi-cloud-reality-the-uncomfortable-truth-about-multi-cloud-data-platforms-bac2d4d48841"
     },
     {
       id: 3,
-      title: "GDPR Compliance in Modern Data Stacks",
-      category: "Data Engineering",
-      excerpt: "Implementing automated data privacy workflows with full audit trails and compliance reporting.",
-      date: "2024-08-30",
+      title: "Solopreneurs & AI Coding Agents: Battle - Copilot vs Claude Code vs Warp vs Figma Make",
+      category: "AI",
+      excerpt: "Comparing AI coding agents and tools to help solopreneurs maximize productivity.",
+      date: "2024-10-30",
       readTime: "10 min",
       featured: true,
-      url: ""
+      url: "https://medium.com/@ghanbari.masoud7/solopreneurs-ai-coding-agents-battle-copilot-vs-claude-code-vs-warp-vs-figma-make-304a576256ed"
     },
     {
       id: 4,
