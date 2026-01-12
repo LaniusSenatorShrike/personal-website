@@ -13,6 +13,7 @@ const navItems = [
   { name: 'About', id: 'home' },
   { name: 'CV', id: 'cv' },
   { name: 'Blog', id: 'blog' },
+  { name: 'Academia', id: 'academia' },
   { name: 'YouTube', id: 'youtube' },
   { name: 'Projects', id: 'projects' },
   { name: 'Contact', id: 'contact' },

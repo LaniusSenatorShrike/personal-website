@@ -10,11 +10,12 @@ import { Toaster } from './components/ui/sonner';
 import { Home } from './pages/home/Home';
 import { Projects } from './pages/projects/Projects';
 import { Blog } from './pages/blog/Blog';
+import { Academia } from './pages/academia/Academia';
 import { CV } from './pages/cv/CV';
 import { YouTube } from './pages/youtube/YouTube';
 import { Contact } from './pages/contact/Contact';
 
-type Page = 'home' | 'projects' | 'blog' | 'cv' | 'youtube' | 'contact';
+type Page = 'home' | 'projects' | 'blog' | 'academia' | 'cv' | 'youtube' | 'contact';
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
@@ -66,6 +67,8 @@ function App() {
         return <Projects />;
       case 'blog':
         return <Blog />;
+      case 'academia':
+        return <Academia />;
       case 'cv':
         return <CV />;
       case 'youtube':

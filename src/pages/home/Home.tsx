@@ -24,14 +24,14 @@ export function Home({ onNavigate }: HomeProps) {
           <div className="flex justify-center md:justify-end">
             <div className="relative">
               <div className="absolute -inset-4 bg-[var(--color-accent)] opacity-10"></div>
-              <div className="relative w-80 h-80 bg-gray-800 overflow-hidden">
+              <div className="relative w-[40rem] h-[40rem] bg-gray-800 overflow-hidden">
                 <ImageWithFallback
                   src={homeContent.profileImage}
                   alt={homeContent.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-[var(--color-accent)]"></div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 border-4 border-[var(--color-accent)]"></div>
             </div>
           </div>
         </div>
