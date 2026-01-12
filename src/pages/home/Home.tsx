@@ -10,16 +10,10 @@ export function Home({ onNavigate }: HomeProps) {
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h2 className="mb-4">{content.title}</h2>
-          <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-16 mb-20">
           {/* Bio */}
-          <div className="accent-line pl-8">
-            <h3 className="mb-6">{content.bio.title}</h3>
-            <div className="space-y-4 text-gray-400">
+          <div className="pl-8">
+            <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               {content.bio.paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
