@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { Badge } from '../../components/ui/badge';
 import { Calendar, Clock, ArrowRight, ExternalLink } from 'lucide-react';
 import { blogContent as content } from './content';
 
 export function Blog() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const filteredPosts = content.posts.filter((post) => 
+    selectedCategory === 'All' || post.category === selectedCategory
+  );
+
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
@@ -30,7 +37,12 @@ export function Blog() {
             <Badge
               key={category}
               variant="outline"
-              className="px-4 py-2 text-gray-400 cursor-pointer hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 cursor-pointer transition-colors ${
+                selectedCategory === category
+                  ? 'border-[var(--color-accent)] text-[var(--color-accent)] bg-[var(--color-accent)]/10'
+                  : 'text-gray-400 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
+              }`}
             >
               {category}
             </Badge>
@@ -41,7 +53,7 @@ export function Blog() {
         <div className="mb-16">
           <h3 className="mb-8">Featured</h3>
           <div className="grid md:grid-cols-3 gap-8">
-            {content.posts
+            {filteredPosts
               .filter((post) => post.featured)
               .map((post) => (
                 <a
@@ -85,7 +97,7 @@ export function Blog() {
         <div>
           <h3 className="mb-8">Recent</h3>
           <div className="space-y-4">
-            {content.posts
+            {filteredPosts
               .filter((post) => !post.featured)
               .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
               .map((post) => (

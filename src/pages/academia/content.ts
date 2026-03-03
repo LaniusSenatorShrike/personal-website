@@ -8,7 +8,7 @@ export const academiaContent = {
       authors: "MR Mousavi, M Ghanbari, SAA Moosavian, P Zarafshan",
       journal: "Robotica 40 (7), 2395-2408",
       year: 2022,
-      url: "https://scholar.google.de/citations?view_op=view_citation&hl=en&user=80SOOu8AAAAJ&citation_for_view=80SOOu8AAAAJ:u5HHmVD_uO8C"
+      url: "https://www.cambridge.org/core/journals/robotica/article/abs/rapid-and-safe-wire-tension-distribution-scheme-for-redundant-cabledriven-parallel-manipulators/1B852555886333F1D1FA940B39178B5A"
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ export const academiaContent = {
       authors: "M Ghanbari, N Amjady",
       journal: "US Patent 10,243,136",
       year: 2019,
-      url: "https://scholar.google.de/citations?view_op=view_citation&hl=en&user=80SOOu8AAAAJ&citation_for_view=80SOOu8AAAAJ:d1gkVwhDpl0C"
+      url: "https://patentimages.storage.googleapis.com/fb/c9/15/b3b19dd3e96a7c/US10243136.pdf"
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ export const academiaContent = {
       authors: "MR Mousavi, M Ghanbari, SAA Moosavian, P Zarafshan",
       journal: "Nonlinear Dynamics 94 (3), 2077-2096",
       year: 2018,
-      url: "https://scholar.google.de/citations?view_op=view_citation&hl=en&user=80SOOu8AAAAJ&citation_for_view=80SOOu8AAAAJ:u-x6o8ySG0sC"
+      url: "https://link.springer.com/article/10.1007/s11071-018-4476-7"
     },
     {
       id: 4,
@@ -32,7 +32,7 @@ export const academiaContent = {
       authors: "M Ghanbari, MR Mousavi, SAA Moosavian, A Nasr, P Zarafshan",
       journal: "2017 5th RSI International Conference on Robotics and Mechatronics (ICRoM)",
       year: 2017,
-      url: "https://scholar.google.de/citations?view_op=view_citation&hl=en&user=80SOOu8AAAAJ&citation_for_view=80SOOu8AAAAJ:9yKSN-GCB0IC"
+      url: "https://ieeexplore.ieee.org/abstract/document/8466229"
     },
     {
       id: 5,
@@ -40,7 +40,7 @@ export const academiaContent = {
       authors: "M Ghanbari, MR Moosavi, SAA Moosavian, P Zarafshan",
       journal: "Modares Mechanical Engineering 17 (4), 67-77",
       year: 2017,
-      url: "https://scholar.google.de/citations?view_op=view_citation&hl=en&user=80SOOu8AAAAJ&citation_for_view=80SOOu8AAAAJ:2osOgNQ5qMEC"
+      url: "https://d1wqtxts1xzle7.cloudfront.net/52461838/2017_Ghanbari_et_al.__Modeling__optimal_path_planning__and_tracking_control_of_a_cable_driven_redundant_parallel_robot-libre.pdf?1491289820=&response-content-disposition=inline%3B+filename%3DModeling_optimal_path_planning_and_track.pdf&Expires=1772545908&Signature=Lpy3kCF7jKtnfZ6jn1gSPjRuKc3nImQEbgd9rvA5MUyPSreq~CH0T9lPzhWUh9FmFEPpJFG6Wthrg6RiUnm~UDFkdt9nh0j2Yn3fCNrIJ3Lt71LLeLit8sWA3MAvAG2jKUR9w0lq0P3~bIh6ciFztUYCJpZchSOTsFY1uUP-vDKRpbnIpNkfV4R-jR4NlGdOIDGbLYMdtPlZPuusXawaqK3Qr5ClWWMXTyx5Y5l~Ad-H06m7fE18ggmbdrrla751137HvIqT8f6130rjUIlKjA4DBYHBbeZ6EBed0NHKdh-MCHKiTld2uP6zRyIRDFIfVK~hA60aE9lcOR5D73erBA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA"
     },
     {
       id: 6,
@@ -48,7 +48,7 @@ export const academiaContent = {
       authors: "M Mousavi, M Ghanbari, A Nasr, SAA Moosavian, P Zarafshan",
       journal: "2016 4th International Conference on Robotics and Mechatronics (ICROM), 477-482",
       year: 2016,
-      url: "https://scholar.google.de/citations?view_op=view_citation&hl=en&user=80SOOu8AAAAJ&citation_for_view=80SOOu8AAAAJ:qjMakFHDy7sC"
+      url: "https://ieeexplore.ieee.org/document/7886787"
     }
   ]
 };

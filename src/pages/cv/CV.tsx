@@ -1,21 +1,14 @@
 import { Badge } from '../../components/ui/badge';
-import { Button } from '../../components/ui/button';
-import { Download, Award, Briefcase, Code2 } from 'lucide-react';
+import { Award, Briefcase, Code2 } from 'lucide-react';
 import { cvContent as content } from './content';
 
 export function CV() {
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-start mb-16">
-          <div>
-            <h2 className="mb-4">{content.title}</h2>
-            <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
-          </div>
-          <Button className="gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white">
-            <Download className="h-4 w-4" />
-            Download PDF
-          </Button>
+        <div className="mb-16">
+          <h2 className="mb-4">{content.title}</h2>
+          <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
         </div>
 
         {/* Technical Skills */}
