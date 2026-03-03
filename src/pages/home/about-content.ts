@@ -5,7 +5,8 @@ export const aboutContent = {
     paragraphs: [
       "Hey there! Analytics guy here! 👋",  
       "I currently work at Marktplaats (yes, the Dutch eBay) as a Analytics Engineering Tech Lead.",
-      "My superpower? I'm always up for the game. I believe playing games helps making great teams and awesome teams build great products. \n",
+      "My superpower? I'm always up for the game.",
+      "I believe playing games helps making great teams and awesome teams build great products.",
       ]
   }
 };
