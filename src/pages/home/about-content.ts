@@ -5,9 +5,10 @@ export const aboutContent = {
     paragraphs: [
     "Hey there! This is Masoud, aka the Analytics guy! 👋",  
     "I currently work at Marktplaats (yes, the Dutch eBay) as an Analytics Tech Lead.",
-    "I help connecting business teams with data insights without them being worried about technical stuff.",
+    "I help business teams connect with data and insights without them being worried about technical stuff.",
     "My superpower? I'm always up for the game.",
     "I believe playing games helps making great teams and awesome teams build great products.",
+    "As hobby, I play Piano and go hiking in the wilderness with my wife.",
       ]
   }
 };
