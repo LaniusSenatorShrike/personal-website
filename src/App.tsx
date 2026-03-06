@@ -6,6 +6,7 @@ import { CommandPalette } from './components/CommandPalette';
 import { Button } from './components/ui/button';
 import { Toaster } from './components/ui/sonner';
 import { useIntersectionObserver } from './hooks/useIntersectionObserver';
+import { SECTION_SPACING_PX } from './constants/spacing';
 
 // Page imports
 import { Home } from './pages/home/Home';
@@ -16,8 +17,8 @@ import { CV } from './pages/cv/CV';
 import { YouTube } from './pages/youtube/YouTube';
 import { Contact } from './pages/contact/Contact';
 
-// Section wrapper component with animations
-function Section({ sectionId, children }: { sectionId: string; children: React.ReactNode }) {
+// Section wrapper component with animations and spacing
+function Section({ sectionId, children, isFirst = false }: { sectionId: string; children: React.ReactNode; isFirst?: boolean }) {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.15 });
   
   return (
@@ -27,6 +28,7 @@ function Section({ sectionId, children }: { sectionId: string; children: React.R
       className={`section-snap section-alternate fade-in-section ${
         isVisible ? 'is-visible' : ''
       }`}
+      style={!isFirst ? { marginBottom: `${SECTION_SPACING_PX}px` } : {}}
     >
       {children}
     </div>
@@ -98,7 +100,7 @@ function App() {
 
       {/* Main Content - All sections stacked */}
       <main>
-        <Section sectionId="home">
+        <Section sectionId="home" isFirst={true}>
           <Home />
         </Section>
         <Section sectionId="cv">

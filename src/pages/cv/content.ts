@@ -1,5 +1,5 @@
 export const cvContent = {
-  title: "Experience",
+  title: "Professional Experiences",
   pdfUrl: "",
   skills: {
     title: "Technical Skills",
@@ -92,11 +92,6 @@ export const cvContent = {
     {
       name: "Data Science and Machine Learning: Python and R",
       issuer: "Udemy",
-      year: "2018"
-    },
-    {
-      name: "Agile Scrum Workshop",
-      issuer: "Workshop",
       year: "2018"
     }
   ],

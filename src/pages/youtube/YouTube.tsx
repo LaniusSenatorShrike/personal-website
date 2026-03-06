@@ -4,9 +4,9 @@ import { youtubeContent as content } from './content';
 
 export function YouTube() {
   return (
-    <section className="py-12 px-6">
+    <section className="py-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mt-20 mb-16">
+        <div className="mb-6">
           <h2 className="mb-4">{content.title}</h2>
           <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
         </div>

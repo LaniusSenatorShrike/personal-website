@@ -3,9 +3,9 @@ import { academiaContent as content } from './content';
 
 export function Academia() {
   return (
-    <section className="py-12 px-6">
+    <section className="py-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mt-20 mb-16">
+        <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2>{content.title}</h2>
             <a
@@ -40,7 +40,6 @@ export function Academia() {
                     <h4 className="mb-2 text-lg font-medium text-gray-100 hover:text-[var(--color-accent)] transition-colors">
                       {paper.title}
                     </h4>
-                    <p className="text-gray-400 text-sm mb-2">{paper.authors}</p>
                     <p className="text-gray-500 text-sm mb-3">{paper.journal}</p>
                     <div className="flex items-center gap-2 text-sm text-gray-500">
                       <Calendar className="h-3 w-3" />

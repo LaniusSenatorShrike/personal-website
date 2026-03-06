@@ -1,42 +1,19 @@
 import { Badge } from '../../components/ui/badge';
 import { Award, Briefcase, Code2 } from 'lucide-react';
 import { cvContent as content } from './content';
+import { SECTION_SPACING_PX } from '../../constants/spacing';
 
 export function CV() {
   return (
-    <section className="py-12 px-6">
+    <section className="py-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mt-20 mb-16">
+        <div className="mb-6">
           <h2 className="mb-4">{content.title}</h2>
           <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
         </div>
 
-        {/* Technical Skills */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-8">
-            <Code2 className="h-6 w-6 text-[var(--color-accent)]" />
-            <h3>{content.skills.title}</h3>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {content.skills.items.map((skill) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="px-4 py-2 border-gray-600 text-gray-400 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
-              >
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </div>
-
         {/* Experience */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-8">
-            <Briefcase className="h-6 w-6 text-[var(--color-accent)]" />
-            <h3>Professional Experience</h3>
-          </div>
-
+        <div style={{ marginBottom: `${SECTION_SPACING_PX}px` }}>
           <div className="space-y-8">
             {content.experience.map((job) => (
               <div

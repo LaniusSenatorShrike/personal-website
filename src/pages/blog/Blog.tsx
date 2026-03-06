@@ -11,9 +11,9 @@ export function Blog() {
   );
 
   return (
-    <section className="py-12 px-6">
+    <section className="py-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mt-20 mb-16">
+        <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2>{content.title}</h2>
             {content.mediumProfile && (
