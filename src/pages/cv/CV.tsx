@@ -4,16 +4,16 @@ import { cvContent as content } from './content';
 
 export function CV() {
   return (
-    <section className="min-h-screen py-32 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
+        <div className="mt-20 mb-16">
           <h2 className="mb-4">{content.title}</h2>
           <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
         </div>
 
         {/* Technical Skills */}
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-12">
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-8">
             <Code2 className="h-6 w-6 text-[var(--color-accent)]" />
             <h3>{content.skills.title}</h3>
           </div>
@@ -31,13 +31,13 @@ export function CV() {
         </div>
 
         {/* Experience */}
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-12">
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-8">
             <Briefcase className="h-6 w-6 text-[var(--color-accent)]" />
             <h3>Professional Experience</h3>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {content.experience.map((job) => (
               <div
                 key={job.id}
@@ -78,23 +78,21 @@ export function CV() {
 
         {/* Certifications */}
         <div>
-          <div className="flex items-center gap-3 mb-12">
+          <div className="flex items-center gap-3 mb-8">
             <Award className="h-6 w-6 text-[var(--color-accent)]" />
             <h3>Certifications</h3>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-4">
             {content.certifications.map((cert) => (
               <div
                 key={cert.name}
                 className="border border-gray-700 p-6"
               >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h5 className="mb-2">{cert.name}</h5>
-                    <p className="text-gray-400">{cert.issuer}</p>
-                  </div>
-                  <Badge variant="outline" className="text-gray-400">{cert.year}</Badge>
+                <div className="flex flex-col gap-3">
+                  <h6 className="text-base font-semibold">{cert.name}</h6>
+                  <p className="text-sm text-gray-400">{cert.issuer}</p>
+                  <Badge variant="outline" className="text-gray-400 w-fit text-xs">{cert.year}</Badge>
                 </div>
               </div>
             ))}

@@ -21,13 +21,11 @@ import {
 } from 'lucide-react';
 
 interface CommandPaletteProps {
-  onNavigate: (page: string) => void;
   lightMode: boolean;
   toggleLightMode: () => void;
 }
 
 export function CommandPalette({
-  onNavigate,
   lightMode,
   toggleLightMode,
 }: CommandPaletteProps) {
@@ -45,6 +43,20 @@ export function CommandPalette({
     return () => document.removeEventListener('keydown', down);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handleSelect = (action: string) => {
     if (action === 'theme') {
       toggleLightMode();
@@ -52,7 +64,7 @@ export function CommandPalette({
       // Download CV
       console.log('Downloading CV...');
     } else {
-      onNavigate(action);
+      scrollToSection(action);
     }
     setOpen(false);
   };

@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { CommandPalette } from './components/CommandPalette';
 import { Button } from './components/ui/button';
 import { Toaster } from './components/ui/sonner';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 // Page imports
 import { Home } from './pages/home/Home';
@@ -15,12 +16,27 @@ import { CV } from './pages/cv/CV';
 import { YouTube } from './pages/youtube/YouTube';
 import { Contact } from './pages/contact/Contact';
 
-type Page = 'home' | 'projects' | 'blog' | 'academia' | 'cv' | 'youtube' | 'contact';
+// Section wrapper component with animations
+function Section({ sectionId, children }: { sectionId: string; children: React.ReactNode }) {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.15 });
+  
+  return (
+    <div 
+      id={sectionId} 
+      ref={ref}
+      className={`section-snap section-alternate fade-in-section ${
+        isVisible ? 'is-visible' : ''
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     // Initialize theme - dark mode by default
@@ -34,50 +50,35 @@ function App() {
   }, [lightMode]);
 
   useEffect(() => {
-    // Show/hide scroll to top button
+    // Show/hide scroll to top button and track active section
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
+
+      // Detect active section based on scroll position
+      const sections = ['home', 'cv', 'blog', 'academia', 'youtube', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100; // offset for header
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Scroll to top when page changes
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
-
   const toggleLightMode = () => {
     setLightMode(!lightMode);
   };
 
-  const handleNavigate = (page: string) => {
-    setCurrentPage(page as Page);
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home onNavigate={handleNavigate} />;
-      case 'projects':
-        return <Projects />;
-      case 'blog':
-        return <Blog />;
-      case 'academia':
-        return <Academia />;
-      case 'cv':
-        return <CV />;
-      case 'youtube':
-        return <YouTube />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Home onNavigate={handleNavigate} />;
-    }
   };
 
   return (
@@ -86,20 +87,38 @@ function App() {
       <Navigation
         lightMode={lightMode}
         toggleLightMode={toggleLightMode}
-        currentPage={currentPage}
-        onNavigate={handleNavigate}
+        activeSection={activeSection}
       />
 
       {/* Command Palette */}
       <CommandPalette
-        onNavigate={handleNavigate}
         lightMode={lightMode}
         toggleLightMode={toggleLightMode}
       />
 
-      {/* Main Content */}
+      {/* Main Content - All sections stacked */}
       <main>
-        {renderPage()}
+        <Section sectionId="home">
+          <Home />
+        </Section>
+        <Section sectionId="cv">
+          <CV />
+        </Section>
+        <Section sectionId="blog">
+          <Blog />
+        </Section>
+        <Section sectionId="academia">
+          <Academia />
+        </Section>
+        <Section sectionId="youtube">
+          <YouTube />
+        </Section>
+        <Section sectionId="projects">
+          <Projects />
+        </Section>
+        <Section sectionId="contact">
+          <Contact />
+        </Section>
       </main>
 
       {/* Footer */}

@@ -5,8 +5,7 @@ import { Button } from './ui/button';
 interface NavigationProps {
   lightMode: boolean;
   toggleLightMode: () => void;
-  currentPage: string;
-  onNavigate: (page: string) => void;
+  activeSection: string;
 }
 
 const navItems = [
@@ -19,7 +18,7 @@ const navItems = [
   { name: 'Contact', id: 'contact' },
 ];
 
-export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate }: NavigationProps) {
+export function Navigation({ lightMode, toggleLightMode, activeSection }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -31,8 +30,18 @@ export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (page: string) => {
-    onNavigate(page);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
     setMobileMenuOpen(false);
   };
 
@@ -54,9 +63,9 @@ export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => handleNavClick(item.id)}
+                  onClick={() => scrollToSection(item.id)}
                   className={`text-sm transition-colors ${
-                    currentPage === item.id
+                    activeSection === item.id
                       ? 'text-[var(--color-accent)]'
                       : 'text-gray-400 hover:text-gray-100 light:hover:text-gray-900'
                   }`}
@@ -97,9 +106,9 @@ export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => handleNavClick(item.id)}
+                  onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left py-2 transition-colors ${
-                    currentPage === item.id
+                    activeSection === item.id
                       ? 'text-[var(--color-accent)]'
                       : 'text-gray-400 hover:text-gray-100 light:hover:text-gray-900'
                   }`}

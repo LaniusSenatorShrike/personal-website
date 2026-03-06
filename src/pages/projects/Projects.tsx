@@ -13,9 +13,9 @@ export function Projects() {
       : content.projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section className="min-h-screen py-32 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
+        <div className="mt-20 mb-16">
           <h2 className="mb-4">{content.title}</h2>
           <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
         </div>

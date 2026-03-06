@@ -2,36 +2,31 @@ import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { aboutContent as content } from './about-content';
 import { homeContent } from './content';
 
-interface HomeProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Home({ onNavigate }: HomeProps) {
+export function Home() {
   return (
-    <section className="min-h-screen py-32 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 mb-20">
-          {/* Bio */}
-          <div className="pl-8">
-            <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
-              {content.bio.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
+    <section className="pt-32 pb-12 px-6 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Profile Image */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex-shrink-0">
             <div className="relative">
-              <div className="absolute -inset-4 bg-[var(--color-accent)] opacity-10"></div>
-              <div className="relative w-[40rem] h-[40rem] bg-gray-800 overflow-hidden">
+              <div className="absolute -inset-2 bg-[var(--color-accent)] opacity-10"></div>
+              <div className="relative w-48 h-48 bg-gray-800 overflow-hidden">
                 <ImageWithFallback
                   src={homeContent.profileImage}
                   alt={homeContent.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 border-4 border-[var(--color-accent)]"></div>
+            </div>
+          </div>
+
+          {/* Bio */}
+          <div className="flex-1">
+            <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+              {content.bio.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>

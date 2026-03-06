@@ -1,5 +1,5 @@
 export const blogContent = {
-  title: "Writing",
+  title: "Blog",
   mediumProfile: "https://medium.com/@ghanbari.masoud7",
   categories: ["All", "Data Engineering", "Cloud", "AI", "Leadership"],
   posts: [

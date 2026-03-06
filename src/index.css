@@ -421,6 +421,41 @@
   p {
     margin-bottom: 1rem;
   }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll snap for sections */
+  main {
+    scroll-snap-type: y proximity;
+  }
+
+  .section-snap {
+    scroll-snap-align: start;
+  }
+
+  /* Remove fade-in animations for instant visibility */
+  .fade-in-section {
+    opacity: 1;
+  }
+
+  .fade-in-section.is-visible {
+    opacity: 1;
+  }
+
+  /* Single background color - no alternating sections */
+  .section-alternate {
+    background-color: transparent;
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
 
 @layer utilities {

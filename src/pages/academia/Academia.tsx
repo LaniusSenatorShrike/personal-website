@@ -3,9 +3,9 @@ import { academiaContent as content } from './content';
 
 export function Academia() {
   return (
-    <section className="min-h-screen py-32 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
+        <div className="mt-20 mb-16">
           <div className="flex items-center justify-between mb-4">
             <h2>{content.title}</h2>
             <a
