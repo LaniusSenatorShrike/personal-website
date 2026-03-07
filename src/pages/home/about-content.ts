@@ -3,7 +3,7 @@ export const aboutContent = {
   bio: {
     title: "",
     paragraphs: [
-    "Hey there! This is Masoud, aka the Analytics guy! 👋",  
+    "Hoi! This is Masoud, aka the Analytics guy! 👋",  
     "I currently work at Marktplaats (yes, the Dutch eBay) as an Analytics Tech Lead.",
     "I help business teams connect with data and insights without them being worried about technical stuff.",
     "My superpower? I'm always up for the game.",

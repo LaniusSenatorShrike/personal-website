@@ -1,41 +1,52 @@
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { aboutContent as content } from './about-content';
 import { homeContent } from './content';
+import { latestNewsContent } from './latest-news-content';
 
 export function Home() {
   return (
-    <section className="pt-32 pb-12 px-6 min-h-screen flex items-center">
+    <section className="pb-12 px-6" style={{ marginTop: '7rem' }}>
       <div className="max-w-7xl mx-auto w-full">
-        {/* About Me Title */}
-        <div className="mb-6">
-          <h2>About Me</h2>
-          <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
-        </div>
-
-        {/* About Me Box */}
-        <div className="border-2 border-[var(--color-accent)] p-8">
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Profile Image */}
-            <div className="flex-shrink-0">
-              <div className="relative">
-                <div className="absolute -inset-2 bg-[var(--color-accent)] opacity-10"></div>
-                <div className="relative w-48 h-48 bg-gray-800 overflow-hidden">
-                  <ImageWithFallback
-                    src={homeContent.profileImage}
-                    alt={homeContent.name}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-              </div>
+        <div className="flex flex-col md:flex-row gap-8 md:items-stretch">
+          {/* Profile Image - Left Column */}
+          <div className="md:w-5/12 flex">
+            <div className="border-2 border-[var(--color-accent)] overflow-hidden w-full">
+              <ImageWithFallback
+                src={homeContent.profileImage}
+                alt={homeContent.name}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
+          </div>
 
-            {/* Bio */}
-            <div className="flex-1">
-              <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+          {/* Right Column - About Me + Latest News */}
+          <div className="md:w-7/12 flex flex-col gap-6">
+            {/* About Me */}
+            <div className="relative flex-1" style={{ border: '2px solid var(--color-accent)', padding: '1.5rem' }}>
+              <span style={{ position: 'absolute', top: '-0.85em', left: '1rem', backgroundColor: '#0a0a0a', padding: '0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>About Me</span>
+              <div className="space-y-3 text-gray-300 text-base leading-relaxed">
                 {content.bio.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
+            </div>
+
+            {/* Latest News */}
+            <div className="relative flex-1" style={{ border: '2px solid var(--color-accent)', padding: '1.5rem' }}>
+              <span style={{ position: 'absolute', top: '-0.85em', left: '1rem', backgroundColor: '#0a0a0a', padding: '0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>Latest News</span>
+              <ul className="space-y-3 text-gray-300 text-base leading-relaxed" style={{ listStyle: 'disc', paddingLeft: '1.25rem' }}>
+                {latestNewsContent.items.map((item, index) => (
+                  <li key={index}>
+                    <strong>{item.date}:</strong>{' '}
+                    {item.text}
+                    {item.link && item.linkText && (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">
+                        {item.linkText}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

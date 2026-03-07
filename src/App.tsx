@@ -103,6 +103,7 @@ function App() {
         <Section sectionId="home" isFirst={true}>
           <Home />
         </Section>
+        <div style={{ marginBottom: `${SECTION_SPACING_PX}px` }} />
         <Section sectionId="cv">
           <CV />
         </Section>
